@@ -72,3 +72,16 @@ curl -X POST 'http://localhost:8080/auth/realms/Demo-Realm/protocol/openid-conne
  ```
  
 Execute the CURL from Terminal or use Postman. The response would look like below.
+
+
+## Let’s decode the access_token JWT token issued for employee1 using https://jwt.io.
+
+Let’s decode the access_token JWT token issued for employee1 using https://jwt.io.
+
+access_token includes the permission details.
+
+realm_access.roles includes app_user realm role.
+resource_access.nodejs-microservice.roles include the userclient role.
+preferred_username includes the username of the user (employee1)
+
+iat, exp includes the token issued time as well as the token expiry time. Access Token expiry times can be customizable under Realm Settings, Tokens tab. By default, Access Token Lifespan would be set to 5 minutes which can be customized based on your security requirements.
