@@ -40,3 +40,35 @@ npm init console output
 npm install --save express
 
 ```
+
+## Keycloak Realm OpenID Endpoint Configuration
+
+1. Copy token_endpoint from the OpenID Endpoint Configuration. URL would look like:
+
+<KEYCLOAK_SERVER_URL>/auth/realms/<REALM_NAME>/protocol/openid-connect/token
+Ex: http://localhost:8080/auth/realms/Demo-Realm/protocol/openid-connect/token
+
+2. Use the following CURL command to generate user credentials. Replace KEYCLOAK_SERVER_URL, REALM_NAME, CLIENT_ID, USERNAME, PASSWORD with correct values.
+
+```
+curl -X POST '<KEYCLOAK_SERVER_URL>/auth/realms/<REALM_NAME>/protocol/openid-connect/token' \
+ --header 'Content-Type: application/x-www-form-urlencoded' \
+ --data-urlencode 'grant_type=password' \
+ --data-urlencode 'client_id=<CLIENT_ID>' \
+ --data-urlencode 'username=<USERNAME>' \
+ --data-urlencode 'password=<PASSWORD>'
+ ```
+ 
+Example:
+
+```
+curl -X POST 'http://localhost:8080/auth/realms/Demo-Realm/protocol/openid-connect/token' \
+ --header 'Content-Type: application/x-www-form-urlencoded' \
+ --data-urlencode 'grant_type=password' \
+ --data-urlencode 'client_id=nodejs-microservice' \
+ --data-urlencode 'client_secret=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx' \
+ --data-urlencode 'username=employee1' \
+ --data-urlencode 'password=mypassword'
+ ```
+ 
+Execute the CURL from Terminal or use Postman. The response would look like below.
