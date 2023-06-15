@@ -40,6 +40,16 @@ npm init console output
 npm install --save express
 
 ```
+To confirm that Express has installed correctly, run the following code.
+
+```
+ls node_modules #(dir node_modules for windows)
+```
+4. To make our development process a lot easier, we will install a tool from npm, nodemon. This tool restarts our server as soon as we make a change in any of our files, otherwise, we need to restart the server manually after each file modification. To install nodemon, use the following command.
+
+```
+npm install -g nodemon
+```
 
 ## Keycloak Realm OpenID Endpoint Configuration
 
