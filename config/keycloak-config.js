@@ -7,10 +7,11 @@ let _keycloak;
 var keycloakConfig = {
     clientId: 'nodejs-microservice',
     bearerOnly: true,
-    serverUrl: 'http://localhost:8080/auth',
-    realm: 'Demo-Realm',
+    //serverUrl: 'http://localhost:8080/auth',
+	serverUrl: 'http://10.10.156.15:8024/auth',
+    realm: 'DemoNodeJs-Realm',
     credentials: {
-        secret: '62c99f7c-da55-48fb-ae4e-a27f132546b7'
+        secret: 'ae0f5535-e1f6-4867-9434-0409330f0689'
     }
 };
 
@@ -23,6 +24,7 @@ function initKeycloak() {
         console.log("Initializing Keycloak...");
         var memoryStore = new session.MemoryStore();
         _keycloak = new Keycloak({ store: memoryStore }, keycloakConfig);
+		console.log("_keycloak  = " + _keycloak);
         return _keycloak;
     }
 }

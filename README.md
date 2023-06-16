@@ -95,3 +95,11 @@ resource_access.nodejs-microservice.roles include the userclient role.
 preferred_username includes the username of the user (employee1)
 
 iat, exp includes the token issued time as well as the token expiry time. Access Token expiry times can be customizable under Realm Settings, Tokens tab. By default, Access Token Lifespan would be set to 5 minutes which can be customized based on your security requirements.
+
+##  Test API
+
+curl -X GET 'http://localhost:3000/test/user'  --header 'Authorization: bearer <ACCESS_TOKEN>'
+
+curl -X GET 'http://localhost:3000/test/admin' --header 'Authorization: bearer <ACCESS_TOKEN>'
+
+curl -X GET 'http://localhost:3000/test/all-user' --header 'Authorization: bearer <ACCESS_TOKEN>'
