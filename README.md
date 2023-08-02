@@ -3,6 +3,8 @@
 ## Docs
 
 - https://medium.com/devops-dudes/securing-node-js-express-rest-apis-with-keycloak-a4946083be51
+- https://blog.ineat-group.com/2017/11/securisez-vos-apis-spring-avec-keycloak-2-parametrage-dun-domaine-keycloak/
+- https://blog.ineat-group.com/2019/11/creer-une-api-node-js-et-la-securiser-avec-keycloak/
 
 ##   Start
 
